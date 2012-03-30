@@ -25,8 +25,6 @@ set smarttab
 set expandtab
 set autoindent
 
-set columns=80
-
 "use tabs for menu files
 autocmd BufRead,BufNewFile *menu set noexpandtab
 
