@@ -25,8 +25,6 @@ set smarttab
 set expandtab
 set autoindent
 
-set columns=80
-
 "use tabs for menu files
 autocmd BufRead,BufNewFile *menu set noexpandtab
 
@@ -53,3 +51,31 @@ augroup resCur
   autocmd!
   autocmd BufWinEnter * call ResCur()
 augroup END
+
+" Add :Shell command to run commands and drop their output in a scratch buffer
+function! s:ExecuteInShell(command)
+  let command = join(map(split(a:command), 'expand(v:val)'))
+  let winnr = bufwinnr('^' . command . '$')
+  silent! execute  winnr < 0 ? 'botright new ' . fnameescape(command) : winnr . 'wincmd w'
+  setlocal buftype=nowrite bufhidden=wipe nobuflisted noswapfile nowrap
+  echo 'Execute ' . command . '...'
+  silent! execute 'silent %!'. command
+  silent! execute 'resize 12'
+  silent! redraw
+  silent! execute 'au BufUnload <buffer> execute bufwinnr(' . bufnr('#') . ') . ''wincmd w'''
+  silent! execute 'nnoremap <silent> <buffer> <LocalLeader>r :call <SID>ExecuteInShell(''' . command . ''')<CR>'
+  echo 'Shell command ' . command . ' executed.'
+endfunction
+command! -complete=shellcmd -nargs=+ Shell call s:ExecuteInShell(<q-args>)
+
+function! FileName()
+    return expand('%:p')
+endfu
+
+function! PathName()
+    return expand('%:p:h')
+endfu
+
+command! Pylint call s:ExecuteInShell('pylint ' . FileName())
+command! Python call s:ExecuteInShell('python ' . FileName())
+command! Test call s:ExecuteInShell('run_tests.py ' . FileName())
