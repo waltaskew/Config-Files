@@ -77,5 +77,5 @@ function! PathName()
 endfu
 
 command! Pylint call s:ExecuteInShell('pylint ' . FileName())
-command! Python call s:ExecuteInShell('python ' . FileName())
-command! Test call s:ExecuteInShell('run_tests.py ' . FileName())
+command! -nargs=* Python call s:ExecuteInShell('python ' . FileName() . ' ' . <q-args>)
+command! Test call s:ExecuteInShell('run_tests ' . FileName())
