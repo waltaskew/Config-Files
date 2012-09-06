@@ -1,5 +1,7 @@
 set nocompatible
 
+call pathogen#infect()
+
 syntax on
 
 filetype on
