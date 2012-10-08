@@ -1,5 +1,7 @@
 set nocompatible
 
+call pathogen#infect()
+
 syntax on
 
 filetype on
@@ -76,6 +78,5 @@ function! PathName()
     return expand('%:p:h')
 endfu
 
-command! Pylint call s:ExecuteInShell('pylint ' . FileName())
+command! -nargs=* Pylint call s:ExecuteInShell('pylint ' . FileName() . ' ' . <q-args>)
 command! -nargs=* Python call s:ExecuteInShell('python ' . FileName() . ' ' . <q-args>)
-command! Test call s:ExecuteInShell('run_tests ' . FileName())
