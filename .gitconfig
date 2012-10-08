@@ -1,0 +1,11 @@
+[core]
+	editor = vim
+[color]
+	ui = true
+[diff]
+	tool = vimdiff
+[difftool]
+	prompt = false
+[alias]
+	vimdiff = difftool
+	snake = ! /home/walt/.snakegit/bin/snake
