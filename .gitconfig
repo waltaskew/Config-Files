@@ -8,4 +8,3 @@
 	prompt = false
 [alias]
 	vimdiff = difftool
-	snake = ! /home/walt/.snakegit/bin/snake
