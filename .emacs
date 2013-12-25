@@ -31,14 +31,3 @@
       (require 'inf-haskell)
       (setq haskell-program-name "ghci")
       (setq haskell-ghci-program-name "ghci"))))
-
-;; Marmalade packages
-(require 'package)
-(add-to-list 'package-archives 
-    '("marmalade" .
-      "http://marmalade-repo.org/packages/"))
-(package-initialize)
-
-;; Clojure marmalade package
-(when (not (package-installed-p 'clojure-mode))
-  (package-install 'clojure-mode))
