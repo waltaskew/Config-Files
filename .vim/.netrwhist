@@ -1,7 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =5
-let g:netrw_dirhist_1='/home/walt/src/NS_text_tools/ns/dacq/drivers/baleen'
-let g:netrw_dirhist_2='/home/walt/src/ns_utils/ns_utils'
-let g:netrw_dirhist_3='/home/walt/src/NS_text_tools/ops/nagios'
-let g:netrw_dirhist_4='/home/walt/src/ns_ingestion/ns_ingestion/util'
-let g:netrw_dirhist_5='/home/walt/src/NS_text_tools/ns/apps/Poseidon2/templates'
