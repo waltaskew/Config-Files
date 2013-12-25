@@ -25,6 +25,8 @@ set smarttab
 set expandtab
 set autoindent
 
+:imap jj <Esc>
+
 "use tabs for menu files
 autocmd BufRead,BufNewFile *menu set noexpandtab
 
