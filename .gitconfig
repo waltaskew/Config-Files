@@ -1,5 +1,8 @@
 [core]
 	editor = vim
+[user]
+	name = waltaskew
+	email = waltaskew@gmail.com
 [color]
 	ui = true
 [diff]
