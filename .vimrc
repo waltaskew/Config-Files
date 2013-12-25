@@ -30,6 +30,12 @@ set autoindent
 "use tabs for menu files
 autocmd BufRead,BufNewFile *menu set noexpandtab
 
+"treat .json files as javascript
+autocmd BufNewFile,BufRead *.json set ft=javascript
+
+"markdown on .md files
+au BufRead,BufNewFile *.md set filetype=markdown
+
 "paste toggle
 set pastetoggle=<F2>
 
