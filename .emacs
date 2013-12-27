@@ -18,6 +18,10 @@
 (dolist (hook '(change-log-mode-hook log-edit-mode-hook))
   (add-hook hook (lambda () (flyspell-mode -1))))
 
+;; latex setup
+(add-hook 'text-mode-hook 'turn-on-auto-fill)
+(setq latex-run-command "pdflatex")
+
 ;; haskell mode configuration
 (setq auto-mode-alist
       (append auto-mode-alist
