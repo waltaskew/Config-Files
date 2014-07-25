@@ -4,6 +4,12 @@
                          ("marmalade" . "http://marmalade-repo.org/packages/")
                          ("melpa" . "http://melpa.milkbox.net/packages/")))
 
+; symlinks are neat
+(setq vc-follow-symlinks t)
+
+; auto-indent is cool
+(electric-indent-mode t)
+
 ; I use version control actually
 (setq make-backup-files nil)
 
