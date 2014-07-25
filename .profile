@@ -14,9 +14,11 @@ export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig/
 # grab some bins
 homebin=~/bin
 homebrew=/usr/local/bin
+cabal=~/.cabal/bin
+gems="$(brew --prefix ruby)/bin"
 coreutils="$(brew --prefix coreutils)/libexec/gnubin"
 
-export PATH=$homebin:$homebrew:$coreutils:$PATH
+export PATH=$homebin:$cabal:$homebrew:$gems:$coreutils:$PATH
 
 export MANPATH="$(brew --prefix coreutils)/libexec/gnuman:$MANPATH"
 
