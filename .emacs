@@ -35,17 +35,6 @@
               '(("\\.hs$"  . haskell-mode)
                 ("\\.lhs$" . literate-haskell-mode))))
 
-(autoload 'haskell-mode "haskell-mode"
-   "Major mode for editing Haskell." t)
-(autoload 'literate-haskell-mode "haskell-mode"
-   "Major mode for editing literate Haskell." t)
-
-(add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
 (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
-(add-hook 'haskell-mode-hook 'turn-on-haskell-ghci)
-(add-hook 'haskell-mode-hook 
-   (function
-    (lambda ()
-      (require 'inf-haskell)
-      (setq haskell-program-name "ghci")
-      (setq haskell-ghci-program-name "ghci"))))
+(add-hook 'haskell-mode-hook 'inf-haskell-mode)
+;(add-hook 'haskell-mode-hook 'interactive-haskell-mode)
