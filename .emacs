@@ -25,6 +25,10 @@
 (add-hook 'text-mode-hook 'turn-on-auto-fill)
 (setq latex-run-command "pdflatex")
 
+;; javacript setup
+(add-hook 'js-mode-hook '(lambda ()
+    (local-set-key (kbd "RET") 'newline-and-indent)))
+
 ;; haskell mode configuration
 (setq auto-mode-alist
       (append auto-mode-alist
