@@ -7,6 +7,9 @@
                          ("melpa" . "http://melpa.milkbox.net/packages/")))
 (package-initialize)
 
+; I use version control actually
+(setq make-backup-files nil)
+
 ; save cursor position
 (require 'saveplace)
 (setq save-place-file "~/.emacs.d/saveplace")
