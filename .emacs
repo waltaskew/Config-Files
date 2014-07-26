@@ -24,7 +24,7 @@
 ;; spell check for text files
 (dolist (hook '(text-mode-hook))
   (add-hook hook (lambda () (flyspell-mode 1))))
-(dolist (hook '(change-log-mode-hook log-edit-mode-hook))
+(dolist (hook '(change-log-mode-hook log-edit-mode-hook html-mode-hook))
   (add-hook hook (lambda () (flyspell-mode -1))))
 
 ;; latex setup
