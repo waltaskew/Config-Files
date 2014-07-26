@@ -7,6 +7,9 @@
 ; symlinks are neat
 (setq vc-follow-symlinks t)
 
+; tabs are not neat
+(setq-default indent-tabs-mode nil)
+
 ; auto-indent is cool
 (electric-indent-mode t)
 
