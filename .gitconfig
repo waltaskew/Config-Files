@@ -11,3 +11,5 @@
 	prompt = false
 [alias]
 	vimdiff = difftool
+[rerere]
+    enabled = true
