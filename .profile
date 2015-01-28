@@ -14,15 +14,16 @@ export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig/
 # grab some bins
 homebin=~/bin
 homebrew=/usr/local/bin
-cabal=~/.cabal/bin
 gems="$(brew --prefix ruby)/bin"
 coreutils="$(brew --prefix coreutils)/libexec/gnubin"
+go="$(brew --prefix go)/libexec/bin"
+sed="$(brew --prefix gnu-sed)/libexec/gnubin"
 
-export PATH=$homebin:$cabal:$homebrew:$gems:$coreutils:$PATH
+export GOPATH=/Users/waskew/Programming/Go
+export PATH=$homebin:$homebrew:$gems:$coreutils:$GOPATH/bin:$go:$sed:$PATH
+export MANPATH="$(brew --prefix coreutils)/libexec/gnuman:$(brew --prefix gnu-sed)/libexec/gnuman:$MANPATH"
 
-export MANPATH="$(brew --prefix coreutils)/libexec/gnuman:$MANPATH"
-
-ssh-add ~/.ssh/github
-ssh-add ~/.ssh/heroku
+# set up rbenv
+eval "$(rbenv init -)"
 
 fortune | cowsay
