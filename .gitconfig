@@ -13,3 +13,5 @@
 	vimdiff = difftool
 [rerere]
     enabled = true
+[pull]
+    rebase = true
