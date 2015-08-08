@@ -19,11 +19,11 @@ coreutils="$(brew --prefix coreutils)/libexec/gnubin"
 go="$(brew --prefix go)/libexec/bin"
 sed="$(brew --prefix gnu-sed)/libexec/gnubin"
 
-export GOPATH=/Users/waskew/Programming/Go
+export GOPATH='/Users/walt/Programming/Go'
 export PATH=$homebin:$homebrew:$gems:$coreutils:$GOPATH/bin:$go:$sed:$PATH
 export MANPATH="$(brew --prefix coreutils)/libexec/gnuman:$(brew --prefix gnu-sed)/libexec/gnuman:$MANPATH"
 
-# set up rbenv
-eval "$(rbenv init -)"
+ssh-add ~/.ssh/github
+ssh-add ~/.ssh/heroku
 
 fortune | cowsay
