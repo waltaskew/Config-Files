@@ -7,6 +7,8 @@ let g:syntastic_check_on_open = 1
 set nocompatible
 
 syntax on
+set background=dark
+colorscheme solarized
 
 filetype on
 filetype indent on
