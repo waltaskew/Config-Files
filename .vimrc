@@ -44,7 +44,10 @@ autocmd BufRead,BufNewFile *menu set noexpandtab
 autocmd BufNewFile,BufRead *.json set ft=javascript
 
 "markdown on .md files
-au BufRead,BufNewFile *.md set filetype=markdown
+augroup markdown
+    au!
+    au BufNewFile,BufRead *.md,*.markdown setlocal filetype=ghmarkdown
+augroup END
 
 "paste toggle
 set pastetoggle=<F2>
