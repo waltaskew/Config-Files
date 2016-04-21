@@ -42,6 +42,9 @@ autocmd BufRead,BufNewFile *menu set noexpandtab
 
 "treat .json files as javascript
 autocmd BufNewFile,BufRead *.json set ft=javascript
+autocmd BufNewFile,BufRead *.json set tabstop=2
+autocmd BufNewFile,BufRead *.json set shiftwidth=2
+autocmd BufNewFile,BufRead *.json set softtabstop=2
 
 "markdown on .md files
 augroup markdown
