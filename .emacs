@@ -44,3 +44,6 @@
 (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
 (add-hook 'haskell-mode-hook 'inf-haskell-mode)
 ;(add-hook 'haskell-mode-hook 'interactive-haskell-mode)
+
+;; scheme setup
+(setq scheme-program-name  "racket")
