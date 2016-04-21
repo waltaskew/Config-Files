@@ -2,7 +2,7 @@
 
 DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 
-for file in .emacs .emacs.d .gitconfig .tmux.conf .vim .vimrc
+for file in .emacs .emacs.d .gitconfig .tmux.conf .vim .vimrc .gitignore_global
 do
   ln -s $DIR/$file  ~/$file
 done
