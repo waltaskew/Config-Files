@@ -1,0 +1,12 @@
+[submodule ".vim/bundle/vim-go"]
+	path = .vim/bundle/vim-go
+	url = https://github.com/fatih/vim-go.git
+[submodule ".vim/bundle/vim-colors-solarized"]
+	path = .vim/bundle/vim-colors-solarized
+	url = https://github.com/altercation/vim-colors-solarized.git
+[submodule ".vim/bundle/syntastic"]
+	path = .vim/bundle/syntastic
+	url = https://github.com/scrooloose/syntastic.git
+[submodule ".vim/bundle/Dockerfile"]
+	path = .vim/bundle/Dockerfile
+	url = https://github.com/ekalinin/Dockerfile.vim.git
