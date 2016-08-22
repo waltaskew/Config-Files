@@ -46,6 +46,11 @@ autocmd BufNewFile,BufRead *.json set tabstop=2
 autocmd BufNewFile,BufRead *.json set shiftwidth=2
 autocmd BufNewFile,BufRead *.json set softtabstop=2
 
+"tabstop 2 on .yml
+autocmd BufNewFile,BufRead *.yml set tabstop=2
+autocmd BufNewFile,BufRead *.yml set shiftwidth=2
+autocmd BufNewFile,BufRead *.yml set softtabstop=2
+
 "markdown on .md files
 augroup markdown
     au!
