@@ -9,3 +9,5 @@ build
 *.o
 *.so
 coverage.out
+*.pkl
+/dist
