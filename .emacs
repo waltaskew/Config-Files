@@ -37,6 +37,18 @@
 (add-hook 'text-mode-hook 'turn-on-auto-fill)
 (setq latex-run-command "pdflatex")
 
+;; go setup
+(defun my-go-mode-hook ()
+  ; Call Gofmt before saving
+  (add-hook 'before-save-hook 'gofmt-before-save)
+  (go-eldoc-setup)
+  ; Customize compile command to run go build
+  (if (not (string-match "go" compile-command))
+      (set (make-local-variable 'compile-command)
+           "go build -v && go test -v && go vet"))
+  (load-file "$GOPATH/src/golang.org/x/tools/cmd/oracle/oracle.el"))
+(add-hook 'go-mode-hook 'my-go-mode-hook)
+
 ;; javacript setup
 (add-hook 'js-mode-hook '(lambda ()
     (local-set-key (kbd "RET") 'newline-and-indent)))
