@@ -45,16 +45,18 @@
 (setq latex-run-command "pdflatex")
 
 ;; go setup
-(defun my-go-mode-hook ()
+(defun go-mode-hook ()
   ; Call Gofmt before saving
   (add-hook 'before-save-hook 'gofmt-before-save)
+  ; Display function signatures
   (go-eldoc-setup)
-  ; Customize compile command to run go build
+  ; Customize compile command to run go build, test and vet
   (if (not (string-match "go" compile-command))
       (set (make-local-variable 'compile-command)
            "go build -v && go test -v && go vet"))
+  ; Load oracle
   (load-file "$GOPATH/src/golang.org/x/tools/cmd/oracle/oracle.el"))
-(add-hook 'go-mode-hook 'my-go-mode-hook)
+(add-hook 'go-mode-hook 'go-mode-hook)
 
 ;; javacript setup
 (add-hook 'js-mode-hook '(lambda ()
