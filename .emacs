@@ -21,6 +21,12 @@
 (setq save-place-file "~/.emacs.d/saveplace")
 (setq-default save-place t)
 
+;; solarized theme
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/emacs-color-theme-solarized")
+(setq frame-background-mode 'dark)
+(load-theme 'solarized t)
+(setq solarized-terminal-themed t)
+
 ;; spell check for text files
 (dolist (hook '(text-mode-hook))
   (add-hook hook (lambda () (flyspell-mode 1))))
