@@ -38,6 +38,9 @@
 (setq save-place-file "~/.emacs.d/saveplace")
 (setq-default save-place t)
 
+; smooth scrolling
+(setq scroll-step 1)
+
 ;; solarized theme
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/emacs-color-theme-solarized")
 (setq frame-background-mode 'dark)
