@@ -14,6 +14,16 @@
 (require 'evil)
 (evil-mode 1)
 
+;; flycheck
+(require 'package)
+
+(add-to-list 'package-archives
+             '("MELPA Stable" . "https://stable.melpa.org/packages/") t)
+(package-initialize)
+; (use-package flycheck
+;              :ensure t
+;              :init (global-flycheck-mode))
+
 ; tabs are not neat
 (setq-default indent-tabs-mode nil)
 
@@ -53,10 +63,16 @@
   ; Customize compile command to run go build, test and vet
   (if (not (string-match "go" compile-command))
       (set (make-local-variable 'compile-command)
-           "go build -v && go test -v && go vet"))
+           ; "go build -v && go test -v && go vet"))
+           "go build -v "))
   ; Load oracle
   (load-file "$GOPATH/src/golang.org/x/tools/cmd/oracle/oracle.el"))
 (add-hook 'go-mode-hook 'go-mode-hook)
+
+;; python setup
+; (require 'python-mode)
+; (add-to-list 'auto-mode-alist '("\\.py$" . python-mode))
+(add-hook 'python-mode-hook 'flycheck-mode)
 
 ;; javacript setup
 (add-hook 'js-mode-hook '(lambda ()
