@@ -41,6 +41,15 @@
 ; smooth scrolling
 (setq scroll-step 1)
 
+
+(defun switch-to-previous-buffer ()
+  "Switch to previously open buffer.
+iRepeated invocations toggle between the two most recently open buffers."
+  (interactive)
+  (switch-to-buffer (other-buffer (current-buffer) 1)))
+
+(global-set-key (kbd "C-c b") 'switch-to-previous-buffer)
+
 ;; solarized theme
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/emacs-color-theme-solarized")
 (setq frame-background-mode 'dark)
@@ -68,6 +77,7 @@
       (set (make-local-variable 'compile-command)
            ; "go build -v && go test -v && go vet"))
            "go build -v "))
+  (local-set-key (kbd "M-g") 'godef-jump)
   ; Load oracle
   (load-file "$GOPATH/src/golang.org/x/tools/cmd/oracle/oracle.el"))
 (add-hook 'go-mode-hook 'go-mode-hook)
