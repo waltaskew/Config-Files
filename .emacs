@@ -76,6 +76,7 @@
 ; (require 'python-mode)
 ; (add-to-list 'auto-mode-alist '("\\.py$" . python-mode))
 (add-hook 'python-mode-hook 'flycheck-mode)
+(add-hook 'python-mode-hook #'(lambda () (modify-syntax-entry ?_ "w")))
 
 ;; javacript setup
 (add-hook 'js-mode-hook '(lambda ()
@@ -93,3 +94,6 @@
 
 ;; scheme setup
 (setq scheme-program-name  "racket")
+
+;; ruby setup
+(add-hook 'ruby-mode-hook #'(lambda () (modify-syntax-entry ?_ "w")))
