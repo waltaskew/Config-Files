@@ -87,6 +87,7 @@ iRepeated invocations toggle between the two most recently open buffers."
 ; (add-to-list 'auto-mode-alist '("\\.py$" . python-mode))
 (add-hook 'python-mode-hook 'flycheck-mode)
 (add-hook 'python-mode-hook #'(lambda () (modify-syntax-entry ?_ "w")))
+(add-hook 'python-mode-hook #'(lambda () (global-set-key (kbd "C-c t") 'pytest-directory)))
 
 ;; javacript setup
 (add-hook 'js-mode-hook '(lambda ()
