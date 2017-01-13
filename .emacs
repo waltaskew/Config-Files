@@ -80,6 +80,7 @@ iRepeated invocations toggle between the two most recently open buffers."
   (local-set-key (kbd "M-g") 'godef-jump)
   ; Load oracle
   (load-file "$GOPATH/src/golang.org/x/tools/cmd/oracle/oracle.el"))
+  (global-set-key (kbd "C-c t") 'go-test-current-file)
 (add-hook 'go-mode-hook 'go-mode-hook)
 
 ;; python setup
