@@ -20,9 +20,6 @@
 (add-to-list 'package-archives
              '("MELPA Stable" . "https://stable.melpa.org/packages/") t)
 (package-initialize)
-; (use-package flycheck
-;              :ensure t
-;              :init (global-flycheck-mode))
 
 ; tabs are not neat
 (setq-default indent-tabs-mode nil)
@@ -84,8 +81,6 @@ iRepeated invocations toggle between the two most recently open buffers."
 (add-hook 'go-mode-hook 'go-mode-hook)
 
 ;; python setup
-; (require 'python-mode)
-; (add-to-list 'auto-mode-alist '("\\.py$" . python-mode))
 (add-hook 'python-mode-hook 'flycheck-mode)
 (add-hook 'python-mode-hook #'(lambda () (modify-syntax-entry ?_ "w")))
 (add-hook 'python-mode-hook #'(lambda () (global-set-key (kbd "C-c t") 'pytest-directory)))
