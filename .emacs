@@ -96,11 +96,18 @@ iRepeated invocations toggle between the two most recently open buffers."
                 ("\\.lhs$" . literate-haskell-mode))))
 
 (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
-(add-hook 'haskell-mode-hook 'inf-haskell-mode)
-;(add-hook 'haskell-mode-hook 'interactive-haskell-mode)
+;(add-hook 'haskell-mode-hook 'inf-haskell-mode)
+(add-hook 'haskell-mode-hook 'interactive-haskell-mode)
+(add-hook 'haskell-mode-hook #'(lambda () (global-set-key (kbd "C-c C-c") 'haskell-process-load-file)))
 
 ;; scheme setup
 (setq scheme-program-name  "racket")
 
 ;; ruby setup
 (add-hook 'ruby-mode-hook #'(lambda () (modify-syntax-entry ?_ "w")))
+
+;; internetting
+(require 'web-mode)
+(add-to-list 'auto-mode-alist '("\\.js\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.css\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
