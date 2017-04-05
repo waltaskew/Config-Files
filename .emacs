@@ -21,9 +21,6 @@
              '("MELPA Stable" . "https://stable.melpa.org/packages/") t)
 (package-initialize)
 
-; tabs are not neat
-(setq-default indent-tabs-mode nil)
-
 ; auto-indent is cool
 (electric-indent-mode t)
 
