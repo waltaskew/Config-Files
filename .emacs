@@ -82,6 +82,7 @@ iRepeated invocations toggle between the two most recently open buffers."
 
 ;; python setup
 (add-hook 'python-mode-hook 'flycheck-mode)
+(add-hook 'python-mode-hook 'flyspell-prog-mode)
 (add-hook 'python-mode-hook #'(lambda () (modify-syntax-entry ?_ "w")))
 (add-hook 'python-mode-hook #'(lambda () (global-set-key (kbd "C-c t") 'pytest-directory)))
 
