@@ -16,6 +16,7 @@ build
 # coverage
 .coverage
 coverage.out
+.tox
 
 # editor things
 *.swp
