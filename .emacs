@@ -37,6 +37,10 @@
 ; smooth scrolling
 (setq scroll-step 1)
 
+; as decreed by the gods of unix
+(setq require-final-newline t)
+(setq mode-require-final-newline t)
+
 
 (defun switch-to-previous-buffer ()
   "Switch to previously open buffer.
