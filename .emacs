@@ -88,6 +88,11 @@ iRepeated invocations toggle between the two most recently open buffers."
 (add-hook 'python-mode-hook 'flyspell-prog-mode)
 (add-hook 'python-mode-hook #'(lambda () (global-set-key (kbd "C-c t") 'pytest-directory)))
 
+(require 'flycheck-cython)
+(add-hook 'cython-mode-hook 'flycheck-mode)
+(add-hook 'cython-mode-hook 'flycheck-prog-mode)
+(add-hook 'cython-mode-hook #'(lambda () (global-set-key (kbd "C-c t") 'pytest-directory)))
+
 ;; javacript setup
 (add-hook 'js-mode-hook '(lambda ()
     (local-set-key (kbd "RET") 'newline-and-indent)))
