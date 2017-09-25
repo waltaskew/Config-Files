@@ -111,6 +111,17 @@ iRepeated invocations toggle between the two most recently open buffers."
 ;; scheme setup
 (setq scheme-program-name  "racket")
 
+;; markdown setup
+(autoload 'markdown-mode "markdown-mode" "Major mode for editing Markdown files" t)
+(add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
+(add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
+
+(autoload 'gfm-mode "markdown-mode" "Major mode for editing GitHub Flavored Markdown files" t)
+(add-to-list 'auto-mode-alist '("README\\.md\\'" . gfm-mode))
+
+(add-hook 'markdown-mode-hook 'flyspell-mode)
+(add-hook 'gfm-mode-hook 'flyspell-mode)
+
 ;; ruby setup
 (add-hook 'ruby-mode-hook #'(lambda () (modify-syntax-entry ?_ "w")))
 
