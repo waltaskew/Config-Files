@@ -17,6 +17,11 @@ build
 .coverage
 coverage.out
 .tox
+.pytest_cache/
 
 # editor things
 *.swp
+
+# scala
+.ensime
+.ensime_cache
