@@ -2,3 +2,4 @@
 .emacs.d/elpa/archives/
 .emacs.d/saveplace
 .vim/.netrwhist
+*.elc
