@@ -2,7 +2,8 @@
 
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
                          ("marmalade" . "http://marmalade-repo.org/packages/")
-                         ("melpa" . "http://melpa.milkbox.net/packages/")))
+                         ("melpa" . "http://melpa.milkbox.net/packages/")
+                         ("melpa-stable" . "http://stable.melpa.milkbox.net/packages/")))
 
 ; symlinks are neat
 (setq vc-follow-symlinks t)
@@ -92,6 +93,18 @@ iRepeated invocations toggle between the two most recently open buffers."
 (add-hook 'cython-mode-hook 'flycheck-mode)
 (add-hook 'cython-mode-hook 'flycheck-prog-mode)
 (add-hook 'cython-mode-hook #'(lambda () (global-set-key (kbd "C-c t") 'pytest-directory)))
+
+;;; scala setup
+(setq ensime-startup-notification nil)
+
+;; load the ensime lisp code...
+(add-to-list 'load-path "ENSIME_ROOT/elisp/")
+(require 'ensime)
+
+;; This step causes the ensime-mode to be started whenever
+;; scala-mode is started for a buffer. You may have to customize this step
+;; if you're not using the standard scala mode.
+(add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
 
 ;; javacript setup
 (add-hook 'js-mode-hook '(lambda ()
