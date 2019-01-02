@@ -25,3 +25,7 @@ coverage.out
 # scala
 .ensime
 .ensime_cache
+
+# spark
+derby.log
+metastore_db/
