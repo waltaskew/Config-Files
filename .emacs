@@ -1,28 +1,22 @@
 (add-to-list 'load-path "~/.emacs.d/elpa")
 
+(require 'package)
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
                          ("marmalade" . "http://marmalade-repo.org/packages/")
                          ("melpa" . "http://melpa.milkbox.net/packages/")
+			 ("melpa" . "http://melpa.org/packages/")
+			 ("MELPA Stable" . "https://stable.melpa.org/packages/")
                          ("melpa-stable" . "http://stable.melpa.milkbox.net/packages/")))
+(package-initialize)
 
 ; symlinks are neat
 (setq vc-follow-symlinks t)
 
 ;; evil mode
-(require 'package)
-(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
-(package-initialize)
 (require 'evil)
 (evil-mode 1)
 ; do not treat underscores as word boundaries
 (modify-syntax-entry ?_ "w")
-
-;; flycheck
-(require 'package)
-
-(add-to-list 'package-archives
-             '("MELPA Stable" . "https://stable.melpa.org/packages/") t)
-(package-initialize)
 
 ; auto-indent is cool
 (electric-indent-mode t)
