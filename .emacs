@@ -1,12 +1,10 @@
 (add-to-list 'load-path "~/.emacs.d/elpa")
 
 (require 'package)
-(setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
-                         ("marmalade" . "http://marmalade-repo.org/packages/")
-                         ("melpa" . "http://melpa.milkbox.net/packages/")
-			 ("melpa" . "http://melpa.org/packages/")
-			 ("MELPA Stable" . "https://stable.melpa.org/packages/")
-                         ("melpa-stable" . "http://stable.melpa.milkbox.net/packages/")))
+(setq package-archives '(("gnu" . "https://elpa.gnu.org/packages/")
+                         ("marmalade" . "https://marmalade-repo.org/packages/")
+                         ("melpa" . "https://melpa.org/packages/")
+                         ("melpa-stable" . "https://stable.melpa.org/packages/")))
 (package-initialize)
 
 ; symlinks are neat
