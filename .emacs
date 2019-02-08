@@ -37,7 +37,7 @@
 
 (defun switch-to-previous-buffer ()
   "Switch to previously open buffer.
-iRepeated invocations toggle between the two most recently open buffers."
+   Repeated invocations toggle between the two most recently open buffers."
   (interactive)
   (switch-to-buffer (other-buffer (current-buffer) 1)))
 
