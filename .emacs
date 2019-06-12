@@ -79,12 +79,20 @@
 ;; python setup
 (add-hook 'python-mode-hook 'flycheck-mode)
 (add-hook 'python-mode-hook 'flyspell-prog-mode)
-(add-hook 'python-mode-hook #'(lambda () (global-set-key (kbd "C-c t") 'pytest-directory)))
+(add-hook 'python-mode-hook #'(lambda ()
+				(global-set-key (kbd "C-c t")
+						'pytest-directory)))
+(add-hook 'python-mode-hook #'(lambda ()
+				(global-set-key (kbd "C-c C-k")
+						#'(lambda () (interactive)
+						    (run-python "pyspark")))))
 
 (require 'flycheck-cython)
 (add-hook 'cython-mode-hook 'flycheck-mode)
 (add-hook 'cython-mode-hook 'flycheck-prog-mode)
-(add-hook 'cython-mode-hook #'(lambda () (global-set-key (kbd "C-c t") 'pytest-directory)))
+(add-hook 'cython-mode-hook #'(lambda ()
+				(global-set-key (kbd "C-c t")
+						'pytest-directory)))
 
 ;;; scala setup
 (setq ensime-startup-notification nil)
