@@ -19,6 +19,9 @@
 ; auto-indent is cool
 (electric-indent-mode t)
 
+; use spaces for tabs always
+(setq-default indent-tabs-mode nil)
+
 ; I use version control actually
 (setq make-backup-files nil)
 
