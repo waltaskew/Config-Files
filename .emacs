@@ -13,6 +13,7 @@
 ;; evil mode
 (require 'evil)
 (evil-mode 1)
+
 ; do not treat underscores as word boundaries
 (modify-syntax-entry ?_ "w")
 
@@ -26,9 +27,7 @@
 (setq make-backup-files nil)
 
 ; save cursor position
-(require 'saveplace)
-(setq save-place-file "~/.emacs.d/saveplace")
-(setq-default save-place t)
+(save-place-mode)
 
 ; smooth scrolling
 (setq scroll-step 1)
