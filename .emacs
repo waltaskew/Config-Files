@@ -93,11 +93,19 @@
 (add-to-list 'flycheck-checkers 'python-mypy t)
 (flycheck-add-next-checker 'python-flake8 'python-mypy t)
 
+(defun python-key-bindings ()
+  (local-set-key "\C-ca" 'pytest-all)
+  (local-set-key "\C-cm" 'pytest-module)
+  (local-set-key "\C-c." 'pytest-one)
+  (local-set-key "\C-cd" 'pytest-directory)
+  (local-set-key "\C-cpa" 'pytest-pdb-all)
+  (local-set-key "\C-cpm" 'pytest-pdb-module)
+  (local-set-key "\C-cp." 'pytest-pdb-one))
+
 (add-hook 'python-mode-hook 'flycheck-mode)
 (add-hook 'python-mode-hook 'flyspell-prog-mode)
-(add-hook 'python-mode-hook #'(lambda ()
-				(global-set-key (kbd "C-c t")
-						'pytest-directory)))
+(add-hook 'python-mode-hook 'anaconda-mode)
+(add-hook 'python-mode-hook #'python-key-bindings)
 (add-hook 'python-mode-hook #'(lambda ()
 				(global-set-key (kbd "C-c C-k")
 						#'(lambda () (interactive)
@@ -106,9 +114,7 @@
 (require 'flycheck-cython)
 (add-hook 'cython-mode-hook 'flycheck-mode)
 (add-hook 'cython-mode-hook 'flycheck-prog-mode)
-(add-hook 'cython-mode-hook #'(lambda ()
-				(global-set-key (kbd "C-c t")
-						'pytest-directory)))
+(add-hook 'python-mode-hook #'python-key-bindings)
 
 ;;; scala setup
 (setq ensime-startup-notification nil)
