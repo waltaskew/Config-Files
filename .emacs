@@ -80,6 +80,19 @@
 (add-hook 'go-mode-hook 'go-mode-hook)
 
 ;; python setup
+(require 'flycheck)
+(flycheck-define-checker
+    python-mypy ""
+    :command ("mypy"
+              "--ignore-missing-imports"
+              source-original)
+    :error-patterns
+    ((error line-start (file-name) ":" line ": error:" (message) line-end))
+    :modes python-mode)
+
+(add-to-list 'flycheck-checkers 'python-mypy t)
+(flycheck-add-next-checker 'python-flake8 'python-mypy t)
+
 (add-hook 'python-mode-hook 'flycheck-mode)
 (add-hook 'python-mode-hook 'flyspell-prog-mode)
 (add-hook 'python-mode-hook #'(lambda ()
