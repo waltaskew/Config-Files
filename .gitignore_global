@@ -8,6 +8,7 @@ build
 *.pkl
 /dist
 .ipynb_checkpoints
+.mypy_cache/
 
 # c
 *.o
