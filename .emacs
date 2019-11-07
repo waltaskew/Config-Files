@@ -154,6 +154,12 @@
 ;; ruby setup
 (add-hook 'ruby-mode-hook #'(lambda () (modify-syntax-entry ?_ "w")))
 
+;; saltstack setup
+(add-to-list 'auto-mode-alist '("\\.sls\\'" . yaml-mode))
+
+;; terraform setup
+(add-hook 'terraform-mode-hook #'terraform-format-on-save-mode)
+
 ;; internetting
 (require 'web-mode)
 (add-to-list 'auto-mode-alist '("\\.js\\'" . web-mode))
@@ -166,7 +172,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (yaml-mode web-mode use-package pytest markdown-mode magit haskell-mode gotest go-guru go-eldoc flycheck-pyflakes flycheck-cython evil ensime dockerfile-mode cython-mode))))
+    (terraform-mode salt-mode anaconda-mode yaml-mode web-mode use-package pytest markdown-mode magit haskell-mode gotest go-guru go-eldoc flycheck-pyflakes flycheck-cython evil ensime dockerfile-mode cython-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
