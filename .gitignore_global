@@ -30,3 +30,8 @@ coverage.out
 # spark
 derby.log
 metastore_db/
+
+# terraform
+*.tfstate
+*.tfstate.backup
+.terraform/
