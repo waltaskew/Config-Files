@@ -158,6 +158,14 @@
 
 ;; ruby setup
 (add-hook 'ruby-mode-hook #'(lambda () (modify-syntax-entry ?_ "w")))
+(add-hook 'ruby-mode-hook 'flyspell-prog-mode)
+(add-hook 'ruby-mode-hook 'inf-ruby-minor-mode)
+(add-hook 'ruby-mode-hook 'flycheck-mode)
+(add-hook 'ruby-mode-hook
+          #'(lambda ()
+              ; (setq indent-tabs-mode nil)
+              ; (setq tap-width 2)
+              (setq evil-shift-width 2)))
 
 ;; saltstack setup
 (add-to-list 'auto-mode-alist '("\\.sls\\'" . yaml-mode))
@@ -177,7 +185,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (terraform-mode salt-mode anaconda-mode yaml-mode web-mode use-package pytest markdown-mode magit haskell-mode gotest go-guru go-eldoc flycheck-pyflakes flycheck-cython evil ensime dockerfile-mode cython-mode))))
+    (inf-ruby ruby-end terraform-mode salt-mode anaconda-mode yaml-mode web-mode use-package pytest markdown-mode magit haskell-mode gotest go-guru go-eldoc flycheck-pyflakes flycheck-cython evil ensime dockerfile-mode cython-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
