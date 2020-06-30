@@ -105,10 +105,14 @@
 (add-hook 'python-mode-hook 'flyspell-prog-mode)
 (add-hook 'python-mode-hook 'anaconda-mode)
 (add-hook 'python-mode-hook #'python-key-bindings)
-(add-hook 'python-mode-hook #'(lambda ()
-				(global-set-key (kbd "C-c C-k")
-						#'(lambda () (interactive)
-						    (run-python "pyspark")))))
+(add-hook
+ 'python-mode-hook
+ #'(lambda ()
+     (global-set-key (kbd "C-c C-k")
+                     #'(lambda () (interactive)
+                         ; (let ((python-shell-prompt-detect-enabled nil))
+                         (let ((python-shell-prompt-detect-failure-warning nil))
+                           (run-python "pyspark"))))))
 
 (require 'flycheck-cython)
 (add-hook 'cython-mode-hook 'flycheck-mode)
