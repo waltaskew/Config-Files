@@ -36,6 +36,12 @@
 (setq require-final-newline t)
 (setq mode-require-final-newline t)
 
+; keep previous M-x shell behaviour of opening in current window
+(add-to-list 'display-buffer-alist
+             `(,(regexp-quote "*shell") display-buffer-same-window))
+
+; everyone loves a winner
+(winner-mode)
 
 (defun switch-to-previous-buffer ()
   "Switch to previously open buffer.
