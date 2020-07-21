@@ -35,6 +35,5 @@ sed_man="$(brew --prefix gnu-sed)/libexec/gnuman"
 export MANPATH="$coreutils_man:$sed_man:$MANPATH"
 
 ssh-add ~/.ssh/github
-ssh-add ~/.ssh/heroku
 
 fortune | cowsay
