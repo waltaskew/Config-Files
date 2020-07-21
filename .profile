@@ -5,11 +5,11 @@ then echo '\[\033[00;31m\]:(' ; else echo '\[\033[00;32m\]:)'; fi)
 \[\033[00;34m\]\$\[\033[00m\] "
 
 stopwatch(){
-    date1=$(date +%s);
-    while true; do
-        echo -ne "$(date -u --date @$(($(date +%s) - date1)) +%H:%M:%S)\r";
-        sleep 0.1
-    done
+  date1=$(date +%s);
+  while true; do
+    echo -ne "$(date -u --date @$(($(date +%s) - date1)) +%H:%M:%S)\r";
+    sleep 0.1
+  done
 }
 
 if [ -d $(brew --prefix)/etc/bash_completion.d ]; then
