@@ -29,7 +29,10 @@ coreutils="$(brew --prefix coreutils)/libexec/gnubin"
 sed="$(brew --prefix gnu-sed)/libexec/gnubin"
 
 export PATH=$homebin:$homebrew:$coreutils:$sed:$PATH
-export MANPATH="$(brew --prefix coreutils)/libexec/gnuman:$(brew --prefix gnu-sed)/libexec/gnuman:$MANPATH"
+
+coreutils_man="$(brew --prefix coreutils)/libexec/gnuman"
+sed_man="$(brew --prefix gnu-sed)/libexec/gnuman"
+export MANPATH="$coreutils_man:$sed_man:$MANPATH"
 
 ssh-add ~/.ssh/github
 ssh-add ~/.ssh/heroku
