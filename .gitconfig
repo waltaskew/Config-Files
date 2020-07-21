@@ -1,6 +1,6 @@
 [core]
 	editor = vim
-	excludesfile = /home/waltaskew/.gitignore_global
+	excludesfile = /Users/walt/.gitignore_global
 [user]
 	name = waltaskew
 	email = waltaskew@gmail.com
