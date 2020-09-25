@@ -12,12 +12,7 @@ stopwatch(){
   done
 }
 
-if [ -d $(brew --prefix)/etc/bash_completion.d ]; then
-    for f in $(brew --prefix)/etc/bash_completion.d/*
-    do
-        source $f
-    done
-fi
+[[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
 
 # pkgconfig for brew installs
 export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig/
