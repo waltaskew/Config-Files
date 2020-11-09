@@ -124,6 +124,7 @@
 (add-hook 'cython-mode-hook 'flycheck-mode)
 (add-hook 'cython-mode-hook 'flycheck-prog-mode)
 (add-hook 'python-mode-hook #'python-key-bindings)
+(add-hook 'python-mode-hook 'python-black-on-save-mode)
 
 ;;; scala setup
 (setq ensime-startup-notification nil)
