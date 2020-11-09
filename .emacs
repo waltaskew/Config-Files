@@ -139,8 +139,8 @@
 (add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
 
 ;; javacript setup
-(add-hook 'js-mode-hook '(lambda ()
-    (local-set-key (kbd "RET") 'newline-and-indent)))
+(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
+(add-hook 'js2-mode-hook (lambda () (setq js2-basic-offset 2)))
 
 ;; haskell mode configuration
 (setq auto-mode-alist
@@ -175,7 +175,7 @@
 (add-hook 'ruby-mode-hook
           #'(lambda ()
               ; (setq indent-tabs-mode nil)
-              ; (setq tap-width 2)
+              ; (setq tab-width 2)
               (setq evil-shift-width 2)))
 
 ;; saltstack setup
@@ -186,7 +186,7 @@
 
 ;; internetting
 (require 'web-mode)
-(add-to-list 'auto-mode-alist '("\\.js\\'" . web-mode))
+; (add-to-list 'auto-mode-alist '("\\.js\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.css\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
 (custom-set-variables
@@ -195,8 +195,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   (quote
-    (inf-ruby ruby-end terraform-mode salt-mode anaconda-mode yaml-mode web-mode use-package pytest markdown-mode magit haskell-mode gotest go-guru go-eldoc flycheck-pyflakes flycheck-cython evil ensime dockerfile-mode cython-mode))))
+   '(js2-mode python-black ess inf-ruby ruby-end terraform-mode salt-mode anaconda-mode yaml-mode web-mode use-package pytest markdown-mode magit haskell-mode gotest go-guru go-eldoc flycheck-pyflakes flycheck-cython evil ensime dockerfile-mode cython-mode)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
