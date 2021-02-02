@@ -3,4 +3,5 @@
   ("--no-ext-diff" "--stat"))
  (magit-dispatch nil)
  (magit-push nil
-             ("--force-with-lease")))
+             ("--force-with-lease"))
+ (magit-submodule nil))
