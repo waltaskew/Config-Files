@@ -141,6 +141,10 @@
 ;; javacript setup
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 (add-hook 'js2-mode-hook (lambda () (setq js2-basic-offset 2)))
+(add-hook 'js2-mode-hook (lambda ()
+                           (flycheck-mode t)
+                           (when (executable-find "eslint")
+                             (flycheck-select-checker 'javascript-eslint))))
 
 ;; haskell mode configuration
 (setq auto-mode-alist
