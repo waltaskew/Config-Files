@@ -3,4 +3,5 @@
 .emacs.d/saveplace
 .emacs.d/places
 .vim/.netrwhist
+.emacs.d/transient/
 *.elc
