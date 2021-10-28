@@ -14,6 +14,10 @@
 (require 'evil)
 (evil-mode 1)
 
+; don't evil in term mode
+(delete 'term-mode evil-insert-state-modes)
+(add-to-list 'evil-emacs-state-modes 'term-mode)
+
 ; do not treat underscores as word boundaries
 (modify-syntax-entry ?_ "w")
 
